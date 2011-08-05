@@ -11,7 +11,10 @@ setup a "sshgate" host, which will be used by 'sshg' and 'scpg' script.
 
 == Install ==
 
-Copy sshg, scpg and sshgate-client-configure in /usr/local/bin/ and put execution rights on them
+Copy sshg, scpg and sshgate-client-configure in /usr/bin/ (or /usr/local/bin/, or whatever directory
+which is in PATH) and put execution rights on them.
+  cp sshg scpg sshgate-client-configure /usr/local/bin/
+  chmod +x /usr/local/bin/{sshg,scpg,sshgate-client-configure}
 
 First time you will run scpg or sshg, or if Host sshgate isn't configured in ~/.ssh/config,
 sshgate-client-configure will ask questions to configure sshg and scpg. Be careful, some answer
