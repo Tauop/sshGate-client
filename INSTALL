@@ -1,0 +1,6 @@
+Copy sshg, scpg and sshgate-client-configure in /usr/bin/ (or /usr/local/bin/, or whatever directory
+which is in PATH) and put execution rights on them.
+  cp sshg scpg sshgate-client-configure /usr/local/bin/
+  chmod +x /usr/local/bin/{sshg,scpg,sshgate-client-configure}
+
+read REAME file for more information
