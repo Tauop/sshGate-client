@@ -33,8 +33,8 @@ load() {
   return 2;
 }
 
-function ERROR () { printf "[ERROR] %s\n" $*; }
-function FATAL () { ERROR $*; exit 1  }
+ERROR () { printf "[ERROR] %s\n" $*; }
+FATAL () { ERROR $*; exit 1;         }
 
 load SCRIPT_HELPER_DIRECTORY /etc/ScriptHelper.conf || FATAL "Can't load ScriptHelper"
 load __LIB_MESSAGE__ "${SCRIPT_HELPER_DIRECTORY}/message.lib.sh" || FATAL 'Unable to load message.lib.sh'
@@ -51,7 +51,7 @@ SSHGATE_GATE_HOST='gate.par.lng'
 
 # function -------------------------------------------------------------------
 
-function CONFIGURE_CLIENT () {
+CONFIGURE_CLIENT () {
   # check if we need to configure
   grep '^Host sshgate' < "${SSH_CONFIG_FILE}" >/dev/null 2>/dev/null
   [ $? -eq 0 ] && return 0
